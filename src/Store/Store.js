@@ -1,13 +1,10 @@
-import { combineReducers, applyMiddleware, compose, createStore } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { UserReducer } from "../Service/Reducers/UserReducer";
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const rootReducer = combineReducers({ userlist: UserReducer });
-
-const store = createStore(
-	rootReducer,
-	composeEnhancers(applyMiddleware(thunk)),
-);
-
+import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
+import CounterReducer from "../Service/Counterreducer";
+const reducers = combineReducers({
+	CounterReducer,
+});
+const store = configureStore({
+	reducer: reducers,
+});
 export default store;
