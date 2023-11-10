@@ -1,7 +1,7 @@
 import { DECREMENT, INCREMENT } from "../Service/Actions/Index";
 
 const initialState = {
-	counter: 0,
+	counter: 10,
 };
 
 const CounterReducer = (state = initialState, action) => {
